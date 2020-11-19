@@ -21,19 +21,21 @@
 	</include>
 
         <!-- Load the URDF into the ROS Parameter Server -->
-	<param name="robot_description"
-                command="$(find xacro)/xacro --inorder '$(find p3dx_description)/urdf/pioneer3dx.xacro'" />
-
+<!-- 	<param name="robot_description"
+                command="$(find xacro)/xacro '$(find p3dx_description)/urdf/pioneer3dx.xacro'" />
+ -->
 	<!-- Run a python script to the send a service call to gazebo_ros to spawn 
                 a URDF robot -->
-	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+<!-- 	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
                 respawn="false" output="screen" args="-urdf -model p3dx -param robot_description" />
+ -->
 
-
-        <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+<!--         <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
-
+ -->
 	<!-- ros_control p3rd launch file -->
 	<!-- <include file="$(find p3dx_control)/launch/control.launch" /> -->
+
+	<include file="$(find p3dx_gazebo)/launch/p3dx.launch" />
 
 </launch>
