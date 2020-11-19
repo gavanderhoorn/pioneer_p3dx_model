@@ -12,7 +12,9 @@
   <!--<rosparam param="p3dx_velocity_controller/base_frame_id" subst_value="True">$(arg tfprefix)/base_link</rosparam>-->
 
   <!-- load the controllers -->
-  <!-- <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/$(arg namespace_arg)" args="joint1_position_controller joint2_position_controller joint_state_controller"/>-->
+   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/$(arg namespace_arg)"
+    args="joint_state_controller"/>
+    <!-- args="joint1_position_controller joint2_position_controller joint_state_controller"/> -->
 
   <!-- transform the robot's coordinates to map-->
   <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster" args="0 0 0 0 0 0 /map /$(arg tfprefix)/odom 100" />
