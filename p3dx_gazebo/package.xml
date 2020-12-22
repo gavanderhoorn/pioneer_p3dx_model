@@ -17,4 +17,5 @@
   <run_depend>gazebo_ros</run_depend>
   <run_depend>p3dx_control</run_depend>
   <run_depend>p3dx_description</run_depend>
+  <run_depend>gazebo_ros_control</run_depend>
 </package>
